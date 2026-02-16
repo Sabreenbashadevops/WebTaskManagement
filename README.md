@@ -1,42 +1,30 @@
-# WebTaskManagement
-cloud-native Task Management Web Application
+**System Overview**
+This project demonstrates a full cloud-native DevOps workflow including:
 
-High level architecture
-                ┌──────────────────────┐
-                │     Developers       │
-                └──────────┬───────────┘
-                           │ Git Push
-                           ▼
-                ┌──────────────────────┐
-                │   Git Repository     │
-                └──────────┬───────────┘
-                           │ Trigger CI/CD
-                           ▼
-                ┌──────────────────────┐
-                │    CI/CD Pipeline    │
-                │ Build • Test • Scan  │
-                └──────────┬───────────┘
-                           │ Docker Images
-                           ▼
-                ┌──────────────────────┐
-                │   Container Registry │
-                └──────────┬───────────┘
-                           │ Helm Deploy
-                           ▼
-                ┌────────────────────────────┐
-                │        Kubernetes Cluster  │
-                │  Frontend • Backend • DB   │
-                └──────────┬─────────────────┘
-                           │
-                           ▼
-                ┌────────────────────────────┐
-                │ Load Balancer + Ingress    │
-                └──────────┬─────────────────┘
-                           │
-                           ▼
-                        End Users
+Containerized microservices
+CI/CD automation
+Kubernetes deployment
+Infrastructure as Code
+Observability stack
 
-
-   Monitoring Stack: Prometheus → Grafana
-   Logging Stack: Elastic Stack
-   Infra Provisioning: Terraform
+**Architecture Flow**
+Developers
+   ↓
+Git Repository (GitHub)
+   ↓
+CI/CD Pipeline
+   ↓
+Build • Test • Security Scan
+   ↓
+Docker Image Registry
+   ↓
+Helm Deployment
+   ↓
+Kubernetes Cluster
+   ├── Frontend Service
+   ├── Backend API Service
+   └── Database Service
+   ↓
+Ingress + Load Balancer
+   ↓
+End Users
